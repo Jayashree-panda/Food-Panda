@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Input, Icon, Menu } from "semantic-ui-react";
+import styles from "../styles/Home.module.scss";
 
 export default function Header() {
   const [activeItem, setActiveItem] = useState("home");
@@ -7,9 +8,11 @@ export default function Header() {
     setActiveItem(name);
   };
   return (
-    <div>
+    <div className={styles.header_container}>
       <Menu secondary>
-        <Menu.Item>FOOD PANDA</Menu.Item>
+        <Menu.Item>
+          <h2 className={styles.food_panda}>FOOD PANDA</h2>
+        </Menu.Item>
         <Menu.Item
           name="home"
           active={activeItem === "home"}

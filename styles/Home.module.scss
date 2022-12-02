@@ -1,6 +1,116 @@
-.container {
-  padding: 0 2rem;
-  h1 {
-    color: gray;
+$primary_color: #ac1fb2;
+$white_shade: #ffffff;
+
+.root_container {
+  background-color: #fedcff;
+
+  .header_container {
+    :global(.ui.secondary.menu) {
+      padding: 15px;
+
+      .food_panda {
+        color: $primary_color;
+        font-family: ui-monospace;
+        font-size: 40px;
+        margin-right: 50px;
+      }
+
+      :global(.item) {
+        font-weight: bold;
+        font-size: 15px;
+        &:hover {
+          background-color: unset !important;
+        }
+      }
+
+      :global(.active.item) {
+        background-color: $primary_color;
+        color: $white_shade;
+        font-weight: bold;
+        &:hover {
+          background-color: $primary_color !important;
+        }
+      }
+    }
+  }
+
+  .banner_conainer {
+    display: grid;
+    grid-template-columns: 0.4fr 0.4fr 0.2fr;
+    padding: 8% 5%;
+
+    .prime_content {
+      h1 {
+        font-size: 100px;
+      }
+
+      p:first-child {
+        background-color: white;
+        padding: 10px 50px;
+        width: fit-content;
+        border-radius: 20px;
+        font-weight: bold;
+        box-shadow: 0 3px 26px rgba(0, 0, 0, 0.09) !important;
+      }
+
+      p:last-child {
+        font-size: 20px;
+        font-family: "Courier New", Courier, monospace;
+        opacity: 0.5;
+        font-weight: bold;
+      }
+    }
+
+    .food_image__container {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 80%;
+        border-radius: 20px;
+      }
+    }
+
+    .side_info__container {
+      .side_info__subcontainer {
+        display: grid;
+        grid-template-columns: 0.1fr 0.7fr;
+        gap: 20px;
+        margin-bottom: 40px;
+        img {
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+          box-shadow: 0 3px 26px rgba(0, 0, 0, 0.09) !important;
+        }
+        p {
+          margin-bottom: 0;
+        }
+
+        > div {
+          * {
+            font-weight: bold;
+          }
+          > p:first-child {
+            font-size: 18px;
+            font-family: monospace;
+            margin-bottom: 10px;
+          }
+          p:nth-child(2) {
+            opacity: 0.6;
+          }
+        }
+      }
+      .food_container {
+        display: grid;
+        grid-template-columns: repeat(2, 0.5fr);
+        border-radius: 20px;
+        margin-top: 40%;
+        img {
+          height: 150px;
+          width: 150px;
+          border-radius: 20px;
+        }
+      }
+    }
   }
 }
